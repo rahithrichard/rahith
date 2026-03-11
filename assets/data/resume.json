@@ -1,0 +1,137 @@
+{
+  
+  "hero": {
+    "name": "Rahithkumaran M V",
+    "role": "Frontend Developer | Angular | TypeScript | RxJS | NgRx | REST APIs",
+    "description": "Let’s create something impactful together.",
+    "location": "Palakkad, Kerala, India",
+    "email": "rahithkumaranmv@gmail.com",
+    "phone": "+91 9846 368 036",
+    "website": "www.rahith.com",
+    "github": "https://github.com/rahithrichard",
+    "linkedin": "https://www.linkedin.com/in/rahithkumaran-m-v-68ba56134"
+  },
+  "aboutme":{
+  "summary": "Frontend Developer with over 5 years of experience building responsive, user-centric web applications using Angular, Ionic, and modern JavaScript technologies, delivering clean, scalable, and high-performance solutions.",
+  "tools" : [
+        { "name": "vscode", "icon": "./assets/img/vscode.png" },
+        { "name": "firebase", "icon": "./assets/img/firebase.png" },
+        { "name": "mongodb", "icon": "./assets/img/mongodb.png" },
+        { "name": "figma", "icon": "./assets/img/figma.png" },
+        { "name": "git", "icon": "./assets/img/git.png" }
+    ],
+  "experiences" : [
+        {
+            "name": "Languages",
+            "icon1": "./assets/img/code-icon.png",
+            "icon2": "./assets/img/code-icon-dark.png",
+            "description": "HTML, CSS, JavaScript, Angular, MongoDB, Node.js, Ionic Framework"
+        },
+        {
+            "name": "Education",
+            "icon1": "./assets/img/edu-icon.png",
+            "icon2": "./assets/img/edu-icon-dark.png",
+            "description": "Bachilor's in Computer Applications ( BCA ), Master's in Computer Applications ( MCA )"
+        },
+        {
+            "name": "Projects",
+            "icon1": "./assets/img/project-icon.png",
+            "icon2": "./assets/img/project-icon-dark.png",
+            "description": "Built more than 5 projects"
+        }
+    ]
+
+  },
+  "myservices": {
+    "description":"With 5+ years of experience in enterprise-level projects, I provide professional web and app development services backed by strong UI/UX design principles. I build secure, scalable, and performance-optimized applications tailored to complex business requirements.",
+    "services" : [
+          {
+              "name": "Web design",
+              "icon": "./assets/img/web-icon.png",
+              "description": "Web development is the process of building, programming...",
+              "link": "#"
+          },
+          {
+              "name": "Mobile app",
+              "icon": "./assets/img/mobile-icon.png",
+              "description": "Web development is the process of building, programming...",
+              "link": "#"
+          },
+          {
+              "name": "UI/ UX design",
+              "icon": "./assets/img/ui-icon.png",
+              "description": "Web development is the process of building, programming...",
+              "link": "#"
+          },
+          {
+              "name": "Graphics design",
+              "icon": "./assets/img/graphics-icon.png",
+              "description": "Web development is the process of building, programming...",
+              "link": "#"
+          }
+      ]
+},
+"projects": {
+    "description": "Discover my latest projects highlighting my experience in frontend development, enterprise-level web applications, app development, and intuitive UI/UX design. Each project reflects my focus on performance, scalability, and seamless user experience.",
+    "works": [
+        {
+            "name": "Frontend project",
+            "image": "./assets/img/work-1.png",
+            "description": "Web Design",
+            "link": ""
+        },
+        {
+            "name": "Geo based app",
+            "image": "./assets/img/work-2.png",
+            "description": "mobile app",
+            "link": ""
+        },
+        {
+            "name": "Insillion Angular Web Application",
+            "image": "./assets/img/work-3.png",
+            "description": "Enterprise web application, Improved interactivity and responsiveness by 40%",
+            "link": ""
+        },
+        {
+            "name": "Fitbet App",
+            "image": "./assets/img/work-4.png",
+            "description": "UI/UX Design, Increased downloads by 15%",
+            "link": ""
+        }
+    ]
+},
+    "skills": {
+    "frontend": ["Angular (2+)", "TypeScript", "HTML5", "CSS3", "Bootstrap"],
+    "backend": ["Node.js (basic)", "Java (basic)"],
+    "mobile": ["IONIC Framework"],
+    "tools": ["Git", "GitHub", "Jenkins"],
+    "design": ["Adobe XD", "Illustrator", "Figma"]
+  },
+  "experience": [
+    {
+      "role": "Software Engineer",
+      "company": "GODB Tech Private Ltd. (Insillion)",
+      "duration": "Aug 2022 - Present",
+      "description": "Led Angular development, improved page speed, API integration, testing..."
+    },
+    {
+      "role": "Front-end Developer",
+      "company": "Eficaz Technology Solution Pvt. Ltd.",
+      "duration": "Feb 2021 - Aug 2022",
+      "description": "Responsive UIs, UI/UX improvements, team collaboration..."
+    }
+  ],
+  
+  "education": [
+    {
+      "degree": "MCA",
+      "institution": "Nehru Institute of Information Technology & Management",
+      "duration": "2017 - 2019"
+    },
+    {
+      "degree": "BCA",
+      "institution": "Nehru Arts and Science College",
+      "duration": "2014 - 2017"
+    }
+  ]
+}
