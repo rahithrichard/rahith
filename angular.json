@@ -1,10 +1,10 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "defaultProject": "rahith-portfolio",
+  "defaultProject": "rahith",
   "newProjectRoot": "projects",
   "projects": {
-    "rahith-portfolio": {
+    "rahith": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -14,7 +14,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rahith-portfolio",
+            "outputPath": "dist/rahith",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -44,11 +44,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "rahith-portfolio:build"
+            "browserTarget": "rahith:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "rahith-portfolio:build:production"
+              "browserTarget": "rahith:build:production"
             }
           }
         }
