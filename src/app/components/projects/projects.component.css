@@ -1,0 +1,16 @@
+.projects {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.project {
+  flex: 1 1 300px;
+  padding: 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+}

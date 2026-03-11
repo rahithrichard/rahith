@@ -1,0 +1,109 @@
+<div class="fixed top-0 right-0 w-12/12 -z-10 translate-y-[-100%] [html[data-theme=dark]_&]:hidden">
+  <img src="./assets/img/header-bg-color.png" alt="" class="w-full" />
+</div>
+
+<nav
+  class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 transition-all duration-300 navbar" [class.scrolled]="scrolled"
+>
+  <a>
+    <img
+      src="./assets/img/logo_b.png"
+      alt="Logo"
+      class="w-28 cursor-pointer mr-14 [html[data-theme=dark]_&]:hidden"
+    />
+    <img
+      src="./assets/img/logo_w.png"
+      alt="Logo"
+      class="w-28 cursor-pointer mr-14 hidden [html[data-theme=dark]_&]:block"
+    />
+  </a>
+
+  <ul
+    class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo [html[data-theme=dark]_&]:border [html[data-theme=dark]_&]:border-white/30 [html[data-theme=dark]_&]:bg-transparent"
+  >
+    <li>
+      <a href="#hero"
+        class="cursor-pointer hover:text-gray-500 [html[data-theme=dark]_&]:hover:text-gray-300 transition"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a href="#about"
+        class="cursor-pointer hover:text-gray-500 [html[data-theme=dark]_&]:hover:text-gray-300 transition"
+        >About me</a
+      >
+    </li>
+    <li>
+      <a href="#services"
+        class="cursor-pointer hover:text-gray-500 [html[data-theme=dark]_&]:hover:text-gray-300 transition"
+        >Services</a
+      >
+    </li>
+    <li>
+      <a href="#work"
+        class="cursor-pointer hover:text-gray-500 [html[data-theme=dark]_&]:hover:text-gray-300 transition"
+        >My Work</a
+      >
+    </li>
+    <!-- <li>
+      <a href="#contact"
+        class="cursor-pointer hover:text-gray-500 [html[data-theme=dark]_&]:hover:text-gray-300 transition"
+        >Contact me</a
+      >
+    </li> -->
+  </ul>
+  <div class="flex items-center gap-4">
+    <button (click)="toggleTheme()">
+      <img src="./assets/img/moon_icon.png" alt="" class="w-5 block [html[data-theme=dark]_&]:hidden" />
+      <img
+        src="./assets/img/sun_icon.png"
+        alt=""
+        class="w-5 hidden [html[data-theme=dark]_&]:block"
+      />
+    </button>
+
+    <a href="#contact"
+      class="cursor-pointer hidden lg:flex items-center gap-3 px-8 py-1.5 border border-gray-300 hover:bg-slate-100/70 [html[data-theme=dark]_&]:hover:bg-darkHover rounded-full ml-4 font-Ovo [html[data-theme=dark]_&]:border-white/30"
+    >
+      Contact
+      <img src="./assets/img/arrow-icon.png" alt="" class="w-3 [html[data-theme=dark]_&]:hidden" />
+      <img
+        src="./assets/img/arrow-icon-dark.png"
+        alt=""
+        class="w-3 hidden [html[data-theme=dark]_&]:block"
+      />
+    </a>
+
+    <button class="block md:hidden ml-3">
+      <img src="./assets/img/menu-black.png" alt="" class="w-6 [html[data-theme=dark]_&]:hidden" />
+      <img
+        src="./assets/img/menu-white.png"
+        alt=""
+        class="w-6 hidden [html[data-theme=dark]_&]:block"
+      />
+    </button>
+  </div>
+  <!-- mobilemenu -->
+  <ul
+    class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 font-Ovo [html[data-theme=dark]_&]:bg-darkHover [html[data-theme=dark]_&]:text-white"
+  >
+    <div class="absolute right-6 top-6">
+      <img
+        src="./assets/img/close-black.png"
+        alt=""
+        class="w-5 cursor-pointer [html[data-theme=dark]_&]:hidden"
+      />
+      <img
+        src="./assets/img/close-white.png"
+        alt=""
+        class="w-5 cursor-pointer hidden [html[data-theme=dark]_&]:block"
+      />
+    </div>
+
+    <li><a>Home</a></li>
+    <li><a >About me</a></li>
+    <li><a>Services</a></li>
+    <li><a>My Work</a></li>
+    <li><a>Contact me</a></li>
+  </ul>
+</nav>

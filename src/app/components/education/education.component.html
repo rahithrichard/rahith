@@ -1,0 +1,8 @@
+<section class="education">
+  <h2>Education</h2>
+  <div *ngFor="let edu of education" class="edu-block">
+    <h3>{{ edu.degree }}</h3>
+    <p>{{ edu.institution }}</p>
+    <p><em>{{ edu.duration }}</em></p>
+  </div>
+</section>

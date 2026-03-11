@@ -1,0 +1,20 @@
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0%;
+  background: linear-gradient(90deg, #4f46e5, #06b6d4);
+  z-index: 9999;
+  animation: grow linear;
+  animation-timeline: scroll-progress-timeline;
+}
+
+@keyframes grow {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}

@@ -1,0 +1,18 @@
+/* .skills {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+} */
+.skills h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.skill-groups {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.skill-groups div {
+  flex: 1 1 200px;
+  margin: 1rem;
+}
