@@ -1,0 +1,22 @@
+<div *ngIf="item" class="modal-backdrop" (click)="close()">
+  <div class="modal-card bg-white [html[data-theme=dark]_&]:bg-black text-gray-900 [html[data-theme=dark]_&]:text-white border-gray-200 [html[data-theme=dark]_&]:border-gray-700" (click)="$event.stopPropagation()">
+    <button class="close-btn bg-gray-100 [html[data-theme=dark]_&]:bg-gray-700 text-gray-600 [html[data-theme=dark]_&]:text-gray-300 hover:bg-gray-200 [html[data-theme=dark]_&]:hover:bg-gray-600" aria-label="Close modal" (click)="close()">✕</button>
+
+    <div class="modal-header">
+      <div class="media-wrap bg-purple-100 [html[data-theme=dark]_&]:bg-purple-900" *ngIf="hasImage()">
+        <img *ngIf="item.image" [src]="item.image" [alt]="getTitle()" class="media-img" />
+        <img *ngIf="!item.image && item.icon1" [src]="item.icon1" [alt]="getTitle()" class="media-img" />
+        <img *ngIf="!item.image && !item.icon1 && item.icon" [src]="item.icon" [alt]="getTitle()" class="media-img" />
+      </div>
+      <h2 class="text-gray-900 [html[data-theme=dark]_&]:text-white">{{ getTitle() }}</h2>
+      <small class="section-badge text-indigo-600 [html[data-theme=dark]_&]:text-indigo-400">{{ section | uppercase }}</small>
+    </div>
+
+    <div class="modal-body">
+      <p class="text-gray-700 [html[data-theme=dark]_&]:text-gray-300">{{ getBody() }}</p>
+      <!-- <ng-container *ngIf="item.link">
+        <a [href]="item.link" target="_blank" rel="noopener noreferrer" class="link-btn bg-indigo-600 [html[data-theme=dark]_&]:bg-indigo-500 hover:bg-indigo-700 [html[data-theme=dark]_&]:hover:bg-indigo-600 text-white">Open resource</a>
+      </ng-container> -->
+    </div>
+  </div>
+</div>

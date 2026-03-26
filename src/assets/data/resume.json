@@ -64,7 +64,7 @@
               "link": "#"
           },
           {
-              "name": "Graphics design",
+              "name": "Digital marketing",
               "icon": "./assets/img/graphics-icon.png",
               "description": "Web development is the process of building, programming...",
               "link": "#"
@@ -75,27 +75,27 @@
     "description": "Discover my latest projects highlighting my experience in frontend development, enterprise-level web applications, app development, and intuitive UI/UX design. Each project reflects my focus on performance, scalability, and seamless user experience.",
     "works": [
         {
-            "name": "Frontend project",
+            "name": "Front-end Projects",
             "image": "./assets/img/work-1.png",
             "description": "Web Design",
             "link": ""
         },
         {
-            "name": "Geo based app",
+            "name": "FingerTips Android App",
             "image": "./assets/img/work-2.png",
-            "description": "mobile app",
+            "description": "Mobile App",
             "link": ""
         },
         {
-            "name": "Insillion Angular Web Application",
+            "name": "Insillion Angular Web App",
             "image": "./assets/img/work-3.png",
-            "description": "Enterprise web application, Improved interactivity and responsiveness by 40%",
+            "description": "Enterprise Web App",
             "link": ""
         },
         {
-            "name": "Fitbet App",
+            "name": "Fitbet Mobile App ",
             "image": "./assets/img/work-4.png",
-            "description": "UI/UX Design, Increased downloads by 15%",
+            "description": "UI/UX Design",
             "link": ""
         }
     ]

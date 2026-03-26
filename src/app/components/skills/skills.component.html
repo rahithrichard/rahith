@@ -1,17 +1,4 @@
 <section id="services">
-
-
-  <!-- <h2>Skills</h2>
-  <div class="skill-groups">
-    <div *ngFor="let group of skills | keyvalue">
-      <h3>{{ group.key }}</h3>
-      <ul>
-        <li *ngFor="let item of group.value">{{ item }}</li>
-      </ul>
-    </div>
-  </div> -->
-
-
   <div id="services" class="w-full px-[12%] py-10 scroll-mt-20">
             <h4 class="text-center mb-2 text-lg font-Ovo">What i offer</h4>
             <h2 class="text-center text-5xl font-Ovo">My services</h2>
@@ -22,8 +9,9 @@
                         <img [src]="service.icon" [alt]="service.name" class="w-10" />
                         <h3 class="text-lg my-4 text-gray-700 [html[data-theme=dark]_&]:text-white">{{ service.name }}</h3>
                         <p class="text-sm text-gray-600 leading-5 [html[data-theme=dark]_&]:text-white/80">{{ service.description }}</p>
-                        <a href="{{ service.link }}" class="flex items-center gap-2 text-sm mt-5">Read more <img src="./assets/right-arrow.png" alt="" class="w-4" /></a>
+                        <a class="flex items-center gap-2 text-sm mt-5" (click)="openModal(service, 'services')">Read more <img src="./assets/right-arrow.png" alt="" class="w-4" /></a>
                     </div>
             </div>
         </div>
 </section>
+<app-dynamic-modal [item]="selectedItem" [section]="selectedSection" (closed)="closeModal()"></app-dynamic-modal>

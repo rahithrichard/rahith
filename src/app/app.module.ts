@@ -11,10 +11,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ScrollProgressComponent } from './components/scroll-progress/scroll-progress.component';
+import { DynamicModalComponent } from './components/dynamic-modal/dynamic-modal.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HeroComponent,AboutComponent,EducationComponent,ExperienceComponent,ProjectsComponent,SkillsComponent, NavbarComponent, ContactComponent, FooterComponent, ScrollProgressComponent],
+  declarations: [AppComponent, HeroComponent,AboutComponent,EducationComponent,ExperienceComponent,ProjectsComponent,SkillsComponent, NavbarComponent, ContactComponent, FooterComponent, ScrollProgressComponent, DynamicModalComponent],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,90 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.56);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+.modal-card {
+  width: min(95vw, 510px);
+  border-radius: 16px;
+  padding: 1.4rem;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.25);
+  position: relative;
+  border: 1px solid #d5d7e0;
+  background: #ffffff;
+  color: #20232a;
+}
+
+html[data-theme='dark'] .modal-card {
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid #333333;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.8);
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.2s;
+  background: #f3f4f8;
+  color: #374151;
+}
+
+html[data-theme='dark'] .close-btn {
+  background: #1f2937;
+  color: #d1d5db;
+}
+
+.modal-header {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.media-wrap {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.media-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.section-badge {
+  display: block;
+  margin-top: 0.3rem;
+  font-weight: 700;
+}
+
+.modal-body p {
+  line-height: 1.5;
+  margin-bottom: 1.1rem;
+}
+
+.link-btn {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}

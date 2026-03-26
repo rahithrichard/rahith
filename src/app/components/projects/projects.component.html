@@ -1,13 +1,4 @@
 <section id="work">
-  <!-- <h2>Projects</h2>
-  <div class="project-list">
-    <div *ngFor="let proj of projects" class="project">
-      <h3>{{ proj.title }}</h3>
-      <p><em>{{ proj.duration }}</em></p>
-      <p>{{ proj.impact }}</p>
-    </div>
-  </div> -->
-
    <div id="work" class="w-full px-[12%] py-10 scroll-mt-20">
             <h4 class="text-center mb-2 text-lg font-Ovo">My portfolio</h4>
             <h2 class="text-center text-5xl font-Ovo">My latest work</h2>
@@ -15,7 +6,7 @@
 
             <div class="grid grid-cols-auto my-10 gap-5 [html[data-theme=dark]_&]:text-black">
                
-                    <div *ngFor="let work of works, index as i" class="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group" [ngStyle]="{'background-image': 'url(' + work.image + ')'}">
+                    <div *ngFor="let work of works, index as i" class="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group" [ngStyle]="{'background-image': 'url(' + work.image + ')'}" (click)="openModal(work, 'projects')">
                         <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
                             <div>
                                 <h2 class="font-semibold">{{work.name}}</h2>
@@ -35,3 +26,4 @@
 
         </div>
 </section>
+<app-dynamic-modal [item]="selectedItem" [section]="selectedSection" (closed)="closeModal()"></app-dynamic-modal>
