@@ -3,12 +3,13 @@ import { initializeApp } from 'firebase/app';
 import {
   getFirestore,
   collection,
-  addDoc,
   serverTimestamp,
+  setDoc,
+  doc
 } from 'firebase/firestore';
 import { firebaseConfig } from '../../fireBase/firebase.config';
-declare var hcaptcha: any;
 
+declare var hcaptcha: any;
 
 @Component({
   selector: 'app-contact',
@@ -41,46 +42,66 @@ export class ContactComponent implements AfterViewInit {
 
     this.result = 'Sending...';
 
-   const formData = new FormData(form);
+    const formData = new FormData(form);
 
-const submission = {
-  name: formData.get('name') as string,
-  email: formData.get('email') as string,
-  message: formData.get('message') as string,
-};
+    const submission = {
+      name: formData.get('name') as string,
+      email: (formData.get('email') as string).toLowerCase().trim(),
+      message: formData.get('message') as string,
+    };
 
-try {
-  await this.promiseWithTimeout(
-    addDoc(collection(this.db, 'contacts'), {
-      ...submission,
-      createdAt: serverTimestamp(),
-    }),
-    15000
-  );
+    try {
+      // ✅ Encode email for document ID
+      const safeEmail = submission.email
+        .replace(/\./g, '_')
+        .replace(/@/g, '_');
 
-  this.result = 'Message sent successfully!';
-  form.reset();
- if (typeof hcaptcha !== 'undefined' && this.captchaId !== undefined) {
-  hcaptcha.reset(this.captchaId);
-}
+      // ✅ Save to Firebase (no duplicate check needed)
+      await this.promiseWithTimeout(
+        setDoc(doc(this.db, 'contacts', safeEmail), {
+          ...submission,
+          createdAt: serverTimestamp(),
+        }),
+        15000
+      );
 
+      this.result = 'Message sent successfully!';
+      form.reset();
 
+      if (typeof hcaptcha !== 'undefined' && this.captchaId !== undefined) {
+        hcaptcha.reset(this.captchaId);
+      }
 
-} catch (error) {
+    } catch (error: any) {
 
-  const saved = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+      console.error('Error saving to Firebase:', error);
 
-  saved.push(submission);
+      // 🔥 Handle duplicate (permission denied from rule)
+      if (error?.code === 'permission-denied') {
+        this.result = 'This email is already submitted!';
+        return;
+      }
 
-  localStorage.setItem('contactSubmissions', JSON.stringify(saved));
+      // 🔄 Offline fallback
+      const saved = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
 
-  this.result = 'Saved locally (offline mode)';
-  form.reset();
- if (typeof hcaptcha !== 'undefined' && this.captchaId !== undefined) {
-  hcaptcha.reset(this.captchaId);
-}
+      const exists = saved.some((item: any) => item.email === submission.email);
 
-}
+      if (exists) {
+        this.result = 'This email is already submitted (offline)';
+        return;
+      }
+
+      saved.push(submission);
+      localStorage.setItem('contactSubmissions', JSON.stringify(saved));
+
+      this.result = 'Saved locally (offline mode)';
+      form.reset();
+
+      if (typeof hcaptcha !== 'undefined' && this.captchaId !== undefined) {
+        hcaptcha.reset(this.captchaId);
+      }
+    }
   }
 
   private promiseWithTimeout<T>(promise: Promise<T>, timeoutMs = 15000): Promise<T> {
@@ -101,43 +122,22 @@ try {
     });
   }
 
-  // private loadCaptcha() {
-  //   const captchaDivs = document.querySelectorAll('[data-captcha="true"]');
-
-  //   if (!captchaDivs.length) return;
-
-  //   captchaDivs.forEach((item: any) => {
-  //     if (!item.dataset.sitekey) {
-  //       item.dataset.sitekey =
-  //         '50b2fe65-b00b-4b9e-ad62-3ba471098be2';
-  //     }
-  //   });
-
-  //   const script = document.createElement('script');
-  //   script.src =
-  //     'https://js.hcaptcha.com/1/api.js?recaptchacompat=off';
-  //   script.async = true;
-  //   script.defer = true;
-  //   document.body.appendChild(script);
-  // }
   private loadCaptcha() {
-  const captchaDiv = document.querySelector('[data-captcha="true"]') as HTMLElement;
+    const captchaDiv = document.querySelector('[data-captcha="true"]') as HTMLElement;
 
-  if (!captchaDiv) return;
+    if (!captchaDiv) return;
 
-  const script = document.createElement('script');
-  script.src = 'https://js.hcaptcha.com/1/api.js?recaptchacompat=off';
-  script.async = true;
-  script.defer = true;
+    const script = document.createElement('script');
+    script.src = 'https://js.hcaptcha.com/1/api.js?recaptchacompat=off';
+    script.async = true;
+    script.defer = true;
 
-  script.onload = () => {
-    // 🔥 Render manually and store ID
-    this.captchaId = hcaptcha.render(captchaDiv, {
-      sitekey: '50b2fe65-b00b-4b9e-ad62-3ba471098be2',
-    });
-  };
+    script.onload = () => {
+      this.captchaId = hcaptcha.render(captchaDiv, {
+        sitekey: '50b2fe65-b00b-4b9e-ad62-3ba471098be2',
+      });
+    };
 
-  document.body.appendChild(script);
+    document.body.appendChild(script);
+  }
 }
-}
-
