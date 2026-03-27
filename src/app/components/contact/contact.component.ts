@@ -1,4 +1,14 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { initializeApp } from 'firebase/app';
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp,
+} from 'firebase/firestore';
+import { firebaseConfig } from '../../fireBase/firebase.config';
+declare var hcaptcha: any;
+
 
 @Component({
   selector: 'app-contact',
@@ -6,7 +16,11 @@ import { AfterViewInit, Component } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements AfterViewInit {
+  captchaId: any;
   result = '';
+  private db = getFirestore(initializeApp(firebaseConfig));
+
+  constructor() {}
 
   ngAfterViewInit(): void {
     this.loadCaptcha();
@@ -27,43 +41,103 @@ export class ContactComponent implements AfterViewInit {
 
     this.result = 'Sending...';
 
-    const formData = new FormData(form);
+   const formData = new FormData(form);
 
-    // 🔑 Web3Forms access key
-    formData.append('access_key', '--- enter your access key here ---');
+const submission = {
+  name: formData.get('name') as string,
+  email: formData.get('email') as string,
+  message: formData.get('message') as string,
+};
 
-    // Mock response (same as your React code)
-    const res = {
-      success: true,
-      message: 'Message sent successfully',
-    };
+try {
+  await this.promiseWithTimeout(
+    addDoc(collection(this.db, 'contacts'), {
+      ...submission,
+      createdAt: serverTimestamp(),
+    }),
+    15000
+  );
 
-    if (res.success) {
-      this.result = res.message;
-      form.reset();
-    } else {
-      this.result = res.message;
-    }
+  this.result = 'Message sent successfully!';
+  form.reset();
+ if (typeof hcaptcha !== 'undefined' && this.captchaId !== undefined) {
+  hcaptcha.reset(this.captchaId);
+}
+
+
+
+} catch (error) {
+
+  const saved = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+
+  saved.push(submission);
+
+  localStorage.setItem('contactSubmissions', JSON.stringify(saved));
+
+  this.result = 'Saved locally (offline mode)';
+  form.reset();
+ if (typeof hcaptcha !== 'undefined' && this.captchaId !== undefined) {
+  hcaptcha.reset(this.captchaId);
+}
+
+}
   }
 
-  private loadCaptcha() {
-    const captchaDivs = document.querySelectorAll('[data-captcha="true"]');
+  private promiseWithTimeout<T>(promise: Promise<T>, timeoutMs = 15000): Promise<T> {
+    return new Promise<T>((resolve, reject) => {
+      const timeout = window.setTimeout(() => {
+        reject(new Error('Request timed out'));
+      }, timeoutMs);
 
-    if (!captchaDivs.length) return;
-
-    captchaDivs.forEach((item: any) => {
-      if (!item.dataset.sitekey) {
-        item.dataset.sitekey =
-          '50b2fe65-b00b-4b9e-ad62-3ba471098be2';
-      }
+      promise
+        .then((value) => {
+          clearTimeout(timeout);
+          resolve(value);
+        })
+        .catch((err) => {
+          clearTimeout(timeout);
+          reject(err);
+        });
     });
-
-    const script = document.createElement('script');
-    script.src =
-      'https://js.hcaptcha.com/1/api.js?recaptchacompat=off';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
   }
+
+  // private loadCaptcha() {
+  //   const captchaDivs = document.querySelectorAll('[data-captcha="true"]');
+
+  //   if (!captchaDivs.length) return;
+
+  //   captchaDivs.forEach((item: any) => {
+  //     if (!item.dataset.sitekey) {
+  //       item.dataset.sitekey =
+  //         '50b2fe65-b00b-4b9e-ad62-3ba471098be2';
+  //     }
+  //   });
+
+  //   const script = document.createElement('script');
+  //   script.src =
+  //     'https://js.hcaptcha.com/1/api.js?recaptchacompat=off';
+  //   script.async = true;
+  //   script.defer = true;
+  //   document.body.appendChild(script);
+  // }
+  private loadCaptcha() {
+  const captchaDiv = document.querySelector('[data-captcha="true"]') as HTMLElement;
+
+  if (!captchaDiv) return;
+
+  const script = document.createElement('script');
+  script.src = 'https://js.hcaptcha.com/1/api.js?recaptchacompat=off';
+  script.async = true;
+  script.defer = true;
+
+  script.onload = () => {
+    // 🔥 Render manually and store ID
+    this.captchaId = hcaptcha.render(captchaDiv, {
+      sitekey: '50b2fe65-b00b-4b9e-ad62-3ba471098be2',
+    });
+  };
+
+  document.body.appendChild(script);
+}
 }
 

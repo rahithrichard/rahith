@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { AboutComponent } from './components/about/about.component';
@@ -16,7 +17,7 @@ import { DynamicModalComponent } from './components/dynamic-modal/dynamic-modal.
 
 @NgModule({
   declarations: [AppComponent, HeroComponent,AboutComponent,EducationComponent,ExperienceComponent,ProjectsComponent,SkillsComponent, NavbarComponent, ContactComponent, FooterComponent, ScrollProgressComponent, DynamicModalComponent],
-  imports: [BrowserModule],
+  imports: [BrowserModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })
