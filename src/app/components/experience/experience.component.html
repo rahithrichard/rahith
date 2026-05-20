@@ -1,8 +1,10 @@
 <section class="experience">
   <h2>Experience</h2>
-  <div *ngFor="let job of experience" class="job">
+  <div *ngFor="let job of experience" class="job cursor-pointer" (click)="openModal(job, 'experience')">
     <h3>{{ job.role }} - {{ job.company }}</h3>
     <p><em>{{ job.duration }}</em></p>
     <p>{{ job.description }}</p>
+    <a class="read-more-link">Read more</a>
   </div>
 </section>
+<app-dynamic-modal [item]="selectedItem" [section]="selectedSection" (closed)="closeModal()"></app-dynamic-modal>

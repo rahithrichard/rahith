@@ -29,6 +29,32 @@ export class DynamicModalComponent {
     if (!this.item) {
       return '';
     }
-    return this.item.description || this.item.duration || this.item.institution || '';
+
+    switch (this.section) {
+      case 'services':
+        return this.getServiceBody();
+      case 'projects':
+        return this.item.description || '';
+      case 'experience':
+        return `${this.item.company} - ${this.item.duration}\n\n${this.item.description}`;
+      case 'education':
+        return `${this.item.institution} - ${this.item.duration}`;
+      default:
+        return this.item.description || this.item.duration || this.item.institution || '';
+    }
+  }
+
+  private getServiceBody(): string {
+    const parts = [];
+    if (this.item.Overview) parts.push(`Overview: ${this.item.Overview}`);
+    if (this.item['My Approach']) parts.push(`My Approach: ${this.item['My Approach']}`);
+    if (this.item['I prioritize']) parts.push(`I prioritize: ${this.item['I prioritize']}`);
+    if (this.item['I ensure']) parts.push(`I ensure: ${this.item['I ensure']}`);
+    if (this.item['My design philosophy includes']) parts.push(`My design philosophy includes: ${this.item['My design philosophy includes']}`);
+    if (this.item['My development philosophy includes']) parts.push(`My development philosophy includes: ${this.item['My development philosophy includes']}`);
+    if (this.item['Key Elements']) parts.push(`Key Elements: ${this.item['Key Elements']}`);
+    if (this.item['Tools & Technologies']) parts.push(`Tools & Technologies: ${this.item['Tools & Technologies']}`);
+    if (this.item.Experience) parts.push(`Experience: ${this.item.Experience}`);
+    return parts.join('\n\n');
   }
 }

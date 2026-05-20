@@ -8,6 +8,18 @@ import resume from '../../../assets/data/resume.json';
 })
 export class EducationComponent implements OnInit {
   education = resume.education;
+  selectedItem: any = null;
+  selectedSection: string = '';
   constructor() {}
   ngOnInit(): void {}
+
+  openModal(item: any, section: string): void {
+    this.selectedItem = item;
+    this.selectedSection = section;
+  }
+
+  closeModal(): void {
+    this.selectedItem = null;
+    this.selectedSection = '';
+  }
 }

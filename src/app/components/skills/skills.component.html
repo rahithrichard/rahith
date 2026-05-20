@@ -5,11 +5,11 @@
             <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">{{ myservices.description }}</p>
 
             <div class="grid grid-cols-auto gap-6 my-10">
-                    <div *ngFor="let service of services" class="border border-gray-300 [html[data-theme=dark]_&]:border-white/30 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 [html[data-theme=dark]_&]:hover:bg-darkHover [html[data-theme=dark]_&]:hover:shadow-white">
+                    <div *ngFor="let service of services" class="border border-gray-300 [html[data-theme=dark]_&]:border-white/30 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 [html[data-theme=dark]_&]:hover:bg-darkHover [html[data-theme=dark]_&]:hover:shadow-white" (click)="openModal(service, 'services')">
                         <img [src]="service.icon" [alt]="service.name" class="w-10" />
                         <h3 class="text-lg my-4 text-gray-700 [html[data-theme=dark]_&]:text-white">{{ service.name }}</h3>
-                        <p class="text-sm text-gray-600 leading-5 [html[data-theme=dark]_&]:text-white/80">{{ service.description }}</p>
-                        <a class="flex items-center gap-2 text-sm mt-5" (click)="openModal(service, 'services')">Read more <img src="./assets/right-arrow.png" alt="" class="w-4" /></a>
+                        <p class="text-sm text-gray-600 leading-5 [html[data-theme=dark]_&]:text-white/80">{{ truncateWords(service.Overview, 15) }}</p>
+                        <a class="flex items-center gap-2 text-sm mt-5" (click)="openModal(service, 'services')">Explore more <img src="./assets/right-arrow.png" alt="" class="w-4" /></a>
                     </div>
             </div>
         </div>

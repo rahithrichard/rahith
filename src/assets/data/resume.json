@@ -48,25 +48,49 @@
           {
               "name": "Web design",
               "icon": "./assets/img/web-icon.png",
-              "description": "Web development is the process of building, programming...",
+              "Overview": "Web design and development is the foundation of any modern digital product. It goes beyond visual presentation—focusing on performance, scalability, accessibility, and seamless user interaction. A well-designed web application not only attracts users but ensures long-term engagement and reliability.",
+              "My Approach":"I approach web development with a strong emphasis on component-driven architecture and performance optimization. Using Angular, I build modular, reusable components that improve maintainability and scalability.",
+              "description": "",
+              "I prioritize":"Clean and structured code, Responsive design across all devices, Performance optimization (lazy loading, code splitting), Accessibility and usability standards",
+              "Key Elements":"Responsive layouts (mobile-first design), Scalable component architecture, API integration and state management, Performance tuning and optimization, Cross-browser compatibility",
+              "Tools & Technologies":"Frameworks: Angular Languages: TypeScript, JavaScript (ES6+), HTML5, CSS3 Styling: SCSS, Bootstrap / Tailwind, Version Control: Git Build Tools: Angular CLI, Webpack API Handling: REST APIs, HTTP Client",
+              "Experience": "I have professional experience as a frontend developer, primarily working with Angular to build dynamic and scalable web applications. My experience includes developing production-ready applications, optimizing performance, and maintaining clean architecture in real-world projects.",
               "link": "#"
           },
-          {
+           {
               "name": "Mobile app",
               "icon": "./assets/img/mobile-icon.png",
-              "description": "Web development is the process of building, programming...",
+              "Overview": "Mobile applications today demand speed, reliability, and a native-like experience. Progressive Web Apps (PWAs) bridge the gap between web and mobile platforms, enabling users to access applications seamlessly without installation barriers.",
+              "My Approach":"I develop mobile-first applications that deliver app-like experiences directly through the browser. My focus is on responsiveness, speed, and offline capabilities.",
+              "description": "",
+              "I ensure":"Smooth performance across devices,Optimized loading times,Reliable offline functionality,Consistent UI across platforms",
+              "Key Elements":"Responsive and adaptive layouts, Offline support using service workers, Fast loading with caching strategies, Touch-friendly UI/UX,Cross-platform compatibility",
+              "Tools & Technologies":"Frameworks: Angular (PWA support), Languages: TypeScript, JavaScript,Technologies: Service Workers, Web App Manifest,Optimization: Lazy loading, caching strategies, Testing: Chrome DevTools, Lighthouse",
+              "Experience": "I have hands-on experience building mobile-responsive web applications and PWAs, ensuring high performance and smooth user experience across devices. I focus on delivering production-ready solutions that meet modern mobile standards.",
               "link": "#"
           },
-          {
+           {
               "name": "UI/ UX design",
               "icon": "./assets/img/ui-icon.png",
-              "description": "Web development is the process of building, programming...",
+              "Overview": "UI/UX design is about creating meaningful and intuitive user experiences. It combines visual design with usability principles to ensure that users can interact with applications effortlessly and efficiently.",
+              "My Approach":"I follow a user-centered design approach, focusing on clarity, simplicity, and consistency. I transform complex requirements into intuitive interfaces that enhance usability",
+              "description": "",
+              "My design philosophy includes":"Simplicity and clarity, Consistent design patterns,User-focused interaction design, Seamless integration with development",
+              "Key Elements":"Wireframing and layout structuring,Visual hierarchy and typography,Interactive elements and feedback,Design consistency and scalability,Accessibility and usability",
+              "Tools & Technologies":"Design Tools: Figma / Adobe XD, Frontend Implementation: Angular, HTML, CSS, SCSS, UI Frameworks: Bootstrap / Material UI, Concepts: Design systems, responsive design",
+              "Experience": "As a frontend developer, I bridge the gap between design and development, implementing UI/UX principles directly into code. My experience ensures that designs are not only visually appealing but also technically feasible and efficient.",
               "link": "#"
           },
-          {
-              "name": "Digital marketing",
+           {
+              "name": "Frontend Solutions",
               "icon": "./assets/img/graphics-icon.png",
-              "description": "Web development is the process of building, programming...",
+              "Overview": "Frontend solutions focus on building scalable, high-performance user interfaces that serve as the bridge between users and complex backend systems. It involves creating efficient, maintainable, and responsive applications that deliver seamless digital experiences.",
+              "My Approach":"I follow a structured and component-driven development approach, ensuring that applications are modular, scalable, and easy to maintain. Using Angular, I design systems that handle complex data interactions while maintaining smooth performance and clean UI.",
+              "description": "",
+              "My development philosophy includes:":"Writing clean, reusable, and maintainable code,Designing scalable frontend architectures,Ensuring seamless API communication, Optimizing performance for real-world usage",
+              "Key Elements":"Component-based architecture,API integration and data handling, State management and data flow, Performance optimization and lazy loading, Scalable and maintainable project structure",
+              "Tools & Technologies":"Framework: Angular,Languages: TypeScript, JavaScript (ES6+), HTML5, CSS3,Architecture: Modular structure, reusable components, API Integration: REST APIs, HTTP Client, Version Control: Git, Build Tools: Angular CLI",
+              "Experience": "I have hands-on experience delivering end-to-end frontend solutions, focusing on building scalable and production-ready applications. My work involves integrating APIs, optimizing performance, and maintaining clean architecture to support long-term project growth.",
               "link": "#"
           }
       ]

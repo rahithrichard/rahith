@@ -1,8 +1,10 @@
 <section class="education">
   <h2>Education</h2>
-  <div *ngFor="let edu of education" class="edu-block">
+  <div *ngFor="let edu of education" class="edu-block cursor-pointer" (click)="openModal(edu, 'education')">
     <h3>{{ edu.degree }}</h3>
     <p>{{ edu.institution }}</p>
     <p><em>{{ edu.duration }}</em></p>
+    <a class="read-more-link">Read more</a>
   </div>
 </section>
+<app-dynamic-modal [item]="selectedItem" [section]="selectedSection" (closed)="closeModal()"></app-dynamic-modal>

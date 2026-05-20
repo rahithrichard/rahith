@@ -6,3 +6,12 @@
 .edu-block {
   margin-bottom: 2rem;
 }
+.read-more-link {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+.read-more-link:hover {
+  text-decoration: underline;
+}
