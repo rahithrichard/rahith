@@ -13,6 +13,9 @@
     </div>
 
     <div class="modal-body">
+      <div class="image-gallery" *ngIf="hasImages()">
+        <img *ngFor="let img of getImages()" [src]="img" [alt]="getTitle() + ' screenshot'" class="gallery-img" />
+      </div>
       <p>{{ getBody() }}</p>
       <ng-container *ngIf="item.link && item.link !== '#'">
         <a [href]="item.link" target="_blank" rel="noopener noreferrer" class="link-btn">Open resource</a>

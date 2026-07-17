@@ -34,7 +34,7 @@ export class DynamicModalComponent {
       case 'services':
         return this.getServiceBody();
       case 'projects':
-        return this.item.description || '';
+        return this.getProjectBody();
       case 'experience':
         return `${this.item.company} - ${this.item.duration}\n\n${this.item.description}`;
       case 'education':
@@ -42,6 +42,14 @@ export class DynamicModalComponent {
       default:
         return this.item.description || this.item.duration || this.item.institution || '';
     }
+  }
+
+  hasImages(): boolean {
+    return Boolean(this.item && Array.isArray(this.item.images) && this.item.images.length > 0);
+  }
+
+  getImages(): string[] {
+    return (this.item && Array.isArray(this.item.images)) ? this.item.images : [];
   }
 
   private getServiceBody(): string {
@@ -55,6 +63,17 @@ export class DynamicModalComponent {
     if (this.item['Key Elements']) parts.push(`Key Elements: ${this.item['Key Elements']}`);
     if (this.item['Tools & Technologies']) parts.push(`Tools & Technologies: ${this.item['Tools & Technologies']}`);
     if (this.item.Experience) parts.push(`Experience: ${this.item.Experience}`);
+    return parts.join('\n\n');
+  }
+
+  private getProjectBody(): string {
+    const parts = [];
+    if (this.item.description) parts.push(`Description: ${this.item.description}`);
+    if (this.item.technologies) parts.push(`Technologies: ${this.item.technologies}`);
+    if (this.item.role) parts.push(`Role: ${this.item.role}`);
+    if (this.item.duration) parts.push(`Duration: ${this.item.duration}`);
+    if (this.item['What I Managed']) parts.push(`What I Managed: ${this.item['What I Managed']}`);
+    if (this.item['Value Delivered']) parts.push(`Value Delivered: ${this.item['Value Delivered']}`); 
     return parts.join('\n\n');
   }
 }

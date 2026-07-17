@@ -103,6 +103,37 @@ html[data-theme='dark'] .close-btn:hover {
   white-space: pre-line;
 }
 
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #e5e7eb;
+}
+
+html[data-theme='dark'] .gallery-img {
+  border: 1px solid #374151;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+html[data-theme='dark'] .gallery-img:hover {
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
 .link-btn {
   display: inline-block;
   padding: 0.45rem 0.9rem;

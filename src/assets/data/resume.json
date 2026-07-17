@@ -2,8 +2,8 @@
   
   "hero": {
     "name": "Rahithkumaran M V",
-    "role": "Frontend Developer | Angular | TypeScript | RxJS | NgRx | REST APIs",
-    "description": "Let’s create something impactful together.",
+    "role": "Senior Frontend Engineer specializing in Angular, TypeScript, RxJS, and scalable enterprise applications.",
+    "description": "I build modern, scalable, and high-performance web applications with a strong focus on frontend architecture, responsive UI development, and user experience optimization. With over 5 years of experience, I have worked on enterprise platforms, SaaS products, hybrid mobile applications, and e-commerce systems using Angular and modern frontend technologies.",
     "location": "Palakkad, Kerala, India",
     "email": "rahithkumaranmv@gmail.com",
     "phone": "+91 9846 368 036",
@@ -12,7 +12,7 @@
     "linkedin": "https://www.linkedin.com/in/rahithkumaran-m-v-68ba56134"
   },
   "aboutme":{
-  "summary": "Frontend Developer with over 5 years of experience building responsive, user-centric web applications using Angular, Ionic, and modern JavaScript technologies, delivering clean, scalable, and high-performance solutions.",
+  "summary": "I’m a Frontend Engineer based in Kerala, India, passionate about building scalable and user-friendly web applications using Angular and modern frontend technologies. Over the years, I’ve worked on enterprise applications, SaaS platforms, e-learning systems, healthcare solutions, and hybrid mobile applications. My expertise lies in Angular architecture, reactive programming with RxJS, state management using NgRx, reusable component systems, and frontend performance optimization. I enjoy solving complex UI challenges, improving application scalability, and transforming design concepts into production-ready user experiences.",
   "tools" : [
         { "name": "vscode", "icon": "./assets/img/vscode.png" },
         { "name": "firebase", "icon": "./assets/img/firebase.png" },
@@ -62,7 +62,6 @@
               "icon": "./assets/img/mobile-icon.png",
               "Overview": "Mobile applications today demand speed, reliability, and a native-like experience. Progressive Web Apps (PWAs) bridge the gap between web and mobile platforms, enabling users to access applications seamlessly without installation barriers.",
               "My Approach":"I develop mobile-first applications that deliver app-like experiences directly through the browser. My focus is on responsiveness, speed, and offline capabilities.",
-              "description": "",
               "I ensure":"Smooth performance across devices,Optimized loading times,Reliable offline functionality,Consistent UI across platforms",
               "Key Elements":"Responsive and adaptive layouts, Offline support using service workers, Fast loading with caching strategies, Touch-friendly UI/UX,Cross-platform compatibility",
               "Tools & Technologies":"Frameworks: Angular (PWA support), Languages: TypeScript, JavaScript,Technologies: Service Workers, Web App Manifest,Optimization: Lazy loading, caching strategies, Testing: Chrome DevTools, Lighthouse",
@@ -74,7 +73,6 @@
               "icon": "./assets/img/ui-icon.png",
               "Overview": "UI/UX design is about creating meaningful and intuitive user experiences. It combines visual design with usability principles to ensure that users can interact with applications effortlessly and efficiently.",
               "My Approach":"I follow a user-centered design approach, focusing on clarity, simplicity, and consistency. I transform complex requirements into intuitive interfaces that enhance usability",
-              "description": "",
               "My design philosophy includes":"Simplicity and clarity, Consistent design patterns,User-focused interaction design, Seamless integration with development",
               "Key Elements":"Wireframing and layout structuring,Visual hierarchy and typography,Interactive elements and feedback,Design consistency and scalability,Accessibility and usability",
               "Tools & Technologies":"Design Tools: Figma / Adobe XD, Frontend Implementation: Angular, HTML, CSS, SCSS, UI Frameworks: Bootstrap / Material UI, Concepts: Design systems, responsive design",
@@ -86,7 +84,6 @@
               "icon": "./assets/img/graphics-icon.png",
               "Overview": "Frontend solutions focus on building scalable, high-performance user interfaces that serve as the bridge between users and complex backend systems. It involves creating efficient, maintainable, and responsive applications that deliver seamless digital experiences.",
               "My Approach":"I follow a structured and component-driven development approach, ensuring that applications are modular, scalable, and easy to maintain. Using Angular, I design systems that handle complex data interactions while maintaining smooth performance and clean UI.",
-              "description": "",
               "My development philosophy includes:":"Writing clean, reusable, and maintainable code,Designing scalable frontend architectures,Ensuring seamless API communication, Optimizing performance for real-world usage",
               "Key Elements":"Component-based architecture,API integration and data handling, State management and data flow, Performance optimization and lazy loading, Scalable and maintainable project structure",
               "Tools & Technologies":"Framework: Angular,Languages: TypeScript, JavaScript (ES6+), HTML5, CSS3,Architecture: Modular structure, reusable components, API Integration: REST APIs, HTTP Client, Version Control: Git, Build Tools: Angular CLI",
@@ -101,25 +98,49 @@
         {
             "name": "Front-end Projects",
             "image": "./assets/img/work-1.png",
-            "description": "Web Design",
+            "images": ["./assets/img/webproject1.PNG", "./assets/img/webproject2.png", "./assets/img/webproject3.PNG"],
+            "description": "A collection of responsive, pixel-perfect web interfaces converted from Figma and Adobe XD designs into production-ready Angular components, built with a focus on performance and accessibility.",
+            "role": "Web Developer",
+            "Technologies": "Angular, HTML5, CSS3, JavaScript, Bootstrap, Figma, Adobe XD",
+            "Duration": "Feb 2021 – Jul 2022",
+            "What I Managed": "Converted design mockups into functional, responsive components; handled cross-browser testing; optimized performance using Lighthouse and DevTools; collaborated with designers and backend teams for seamless API integration.",
+            "Value Delivered": "Improved user engagement by 30% and cut page load times by 20%, resulting in a faster, more consistent experience across devices.",
             "link": ""
         },
         {
             "name": "FingerTips Android App",
             "image": "./assets/img/work-2.png",
-            "description": "Mobile App",
+            "images": ["./assets/img/figertip.jpeg", "./assets/img/figertip.PNG", "./assets/img/figertip1.PNG"],
+            "description": "Front-end for a mobile e-commerce shopping app, built to deliver fast product browsing and a smooth checkout experience on Android devices.",
+            "role": "Front-End Developer",
+            "Technologies": "Ionic Framework, AngularJS, JavaScript, HTML5, CSS3",
+            "Duration": "Sep 2020 – Feb 2021",
+            "What I Managed": "Built the hybrid mobile UI, implemented product listing and cart flows, optimized checkout for fewer drop-offs, and ensured consistent performance across Android devices.",
+            "Value Delivered": "Increased customer retention by 25% through a faster, more reliable shopping experience.",
             "link": ""
         },
         {
             "name": "Insillion Angular Web App",
             "image": "./assets/img/work-3.png",
-            "description": "Enterprise Web App",
+            "images": ["./assets/img/insillion3.PNG", "./assets/img/insillion2.PNG", "./assets/img/insillion1.PNG"],
+            "description": "Enterprise-grade Angular web application with modular architecture, robust API integration, and automated CI/CD pipelines.",
+            "role": "Software Engineer",
+            "Technologies": "Angular, TypeScript, RxJS, NgRx, PrimeNG, REST API, Jenkins, Git",
+            "Duration": "Aug 2022 – Dec 2024",
+            "What I Managed": "Led front-end development, built reusable component architecture, integrated RESTful APIs with caching, implemented automated testing and CI/CD, and mentored junior developers on best practices.",
+            "Value Delivered": "Improved interactivity and responsiveness by 40%, boosted user engagement by 20%, and reduced production defects by 30%.",
             "link": ""
         },
         {
             "name": "Fitbet Mobile App ",
             "image": "./assets/img/work-4.png",
-            "description": "UI/UX Design",
+            "images": ["./assets/img/fitbet-logo.png", "./assets/img/FITBET1.png", "./assets/img/FITBET2.png"],
+            "description": "Health and fitness mobile app designed to make workout logging and progress tracking simple and engaging.",
+            "role": "UI/UX Designer",
+            "Technologies": "Figma, Adobe XD, Prototyping, User Testing",
+            "Duration": "Feb 2021 – Jul 2022",
+            "What I Managed": "Designed user flows for workout logging and progress tracking, created prototypes, conducted user testing, and refined the visual design based on feedback.",
+            "Value Delivered": "Increased user retention by 15% through more intuitive, motivating tracking flows.",
             "link": ""
         }
     ]
