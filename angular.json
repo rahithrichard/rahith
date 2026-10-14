@@ -19,7 +19,11 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": ["src/favicon.ico", "src/assets",{
+    "glob": "index.html",
+    "input": "src/assets",
+    "output": "jiji"
+            }],
             "styles": ["src/styles.css", "src/assets/styles/theme.css"],
             "scripts": []
           },
